@@ -1,17 +1,13 @@
-bolean	=	"false"
-val2	=	"nil"
+my_name	=	'tim'
+my_name.lstrip.capitalize
+my_name.lstrip!
+my_name[0] = 'k'
+puts my_name
 
-case
-	when bolean == "pink elephant"
-		puts "Dont think about the pink elephant"
+cur_weather	=	%Q{It's a hot day outside
+					Grab your umbrella...}
 
-	when val2.nil?
-		puts "Question mark in the method name"
-
-	when bolean == false
-		puts "Looks like this one should execute"
-
-	else
-		puts "I guess nothing matched... but why ?"
-
+cur_weather.lines do |line|
+	line.sub! 'hot', 'rainy'
+	puts "#{line.strip}"
 end
