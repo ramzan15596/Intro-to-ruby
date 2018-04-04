@@ -1,6 +1,14 @@
-word_frequency = Hash.new(0)
+family_tree_19 = {oldest: "jim", older: "joe", younger: "jack"}
+family_tree_19[:youngest]  = "jeremy"
+puts family_tree_19
 
-sentence = "Chicka chika boom boom"
-sentence.split.each do |word|
-	word_frequency[word.downcase] += 1
+def adjust_colors (props = {foreground: "red", background: "white"})
+	puts  "Foreground: #{props[:foreground]}" if props[:foreground]
+	puts "Background: #{props[:background]}" if props[:background]
 end
+
+adjust_colors
+
+adjust_colors ({ :foreground => "Green"})
+adjust_colors background: "yella"
+adjust_colors :background => "magenta"
