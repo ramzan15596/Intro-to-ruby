@@ -1,13 +1,6 @@
-my_name	=	'tim'
-my_name.lstrip.capitalize
-my_name.lstrip!
-my_name[0] = 'k'
-puts my_name
+word_frequency = Hash.new(0)
 
-cur_weather	=	%Q{It's a hot day outside
-					Grab your umbrella...}
-
-cur_weather.lines do |line|
-	line.sub! 'hot', 'rainy'
-	puts "#{line.strip}"
+sentence = "Chicka chika boom boom"
+sentence.split.each do |word|
+	word_frequency[word.downcase] += 1
 end
