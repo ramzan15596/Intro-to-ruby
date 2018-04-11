@@ -1,40 +1,59 @@
-# module Sports
-# 	class Match
-# 		attr_accessor :score
+# v1 = "outside"
+
+# class MyClass
+# 	def my_method
+# 		v1 = "Inside"
+# 		p v1
+# 		p local_variables
 # 	end
 # end
 
-# module Patterns
-# 	class Match
-# 		attr_accessor :complete
+# p v1
+# obj = MyClass.new
+# obj.my_method
+
+# p local_variables
+# p self
+
+
+# Scope: Block
+# class BankAccount
+# 	attr_accessor :id, :account
+# 	def initialize(id, account)
+# 		@id = id
+# 		@account = account
 # 	end
 # end
 
-# match1 = Sports::Match.new
-# match1.score = 45; puts match1.score
+# acct1 = BankAccount.new(123, 200)
+# acct2 = BankAccount.new(321, 100)
+# acct3 = BankAccount.new(421, -100)
 
-# match2 = Patterns::Match.new
-# match2.complete = true; puts match2.complete
+# accts = [acct1, acct2, acct3]
+
+# total_sun = 0
+# accts.each do |eachAcct|
+# 	total_sun += eachAcct.account
+# end
+
+# puts total_sun
 
 
-#module as mixin
-module SayMyName
-	attr_accessor :name
-	def print_name
-		puts "Name: #{@name}"
-	end
+#Block local scope
+arr = [5, 4, 1]
+curr_number = 10
+arr.each do |curr_number|
+	some_var = 10
+	print curr_number.to_s + " "
 end
 
-class Person
-	include SayMyName
-end
-class Company
-	include SayMyName
-end
+puts curr_number
 
-person = Person.new
-person.name = "Joe"
-person.print_name
-company = Company.new
-company.name = "Google & Microsoft LLC"
-company.print_name
+#Example 2
+
+adjustment = 5
+arr.each do |curr_number;adjustment|
+	adjustment = 10
+	print "#{curr_number + adjustment}"
+end
+puts adjustment
